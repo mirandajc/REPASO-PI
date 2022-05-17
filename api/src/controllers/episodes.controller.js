@@ -1,10 +1,13 @@
-const getEpisodes = function(req, res, next) {
+const { getEpisodesByApi } = require('../services/episodes.service')
+
+const getEpisodes = async function(req, res, next) {
     
-   const episode  = {
-        episodio: 1,
+   try{
+       const episode  = await getEpisodesByApi()
+        res.status(200, {message: 'Se agregaron los episodios correctamente'}).send(episode)
+    } catch(e) {
+        console.log(e)
     }
-    
-    res.send(episode)
 }
 
 module.exports = {

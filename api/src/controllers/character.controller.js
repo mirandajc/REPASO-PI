@@ -1,3 +1,10 @@
+const getCharaterById = function(){
+    const getId = {
+        name :'algo'
+    }
+    res.send( getId )
+}
+
 const createCharacter = function (req, res, next) {
     const create = {
         name :'algo'
@@ -5,6 +12,8 @@ const createCharacter = function (req, res, next) {
     res.send( create )
 }
 
+
 module.exports ={
-    createCharacter
+    createCharacter,
+    getCharaterById
 }
